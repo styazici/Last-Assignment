@@ -1,0 +1,66 @@
+$webResourceManager.requireResources("com.veniture.internDemo:general-resources")
+#disable_html_escaping()
+
+<!--
+Copyright (c) 2019 by venITure
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<html>
+<head>
+<!-- Latest compiled and minified CSS-->
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <title>Title</title>
+
+    <meta name="decorator" content="atl.general">
+    <style id="css">
+
+    </style>
+
+    <script>
+        AJS.$(document).ready(function () {
+            ## AJS.$('#auiTable > tr')
+        });
+    </script>
+</head>
+<body>
+    <div> 
+    &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;List Of All Projects&lt;/title&gt;
+    &lt;meta name="decorator" content="atl.general"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;form id="admin" class="aui" action="" method="POST"&gt;
+        &lt;div class="field-group"&gt;
+            &lt;label for="name"&gt;Sum::&lt;/label&gt;
+            &lt;input type="text" id="name" name="name" class="text"&gt;
+        &lt;/div&gt;
+        &lt;div class="field-group&gt;
+            &lt;label for="project_selection"&gt;Project:&lt;/label&gt;
+            &lt;select id="project_selection" name="project_selection" class="text"&gt;
+                #foreach($project in $projectManager.getProjectObjects())
+                    &lt;option value="${project.getKey()}"&gt;${project.getName()}&lt;/option&gt;
+                #end
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class="field-group"&gt;
+            &lt;input type="submit" value="Save" class="button"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;br/&gt;
+    Version: ${pom.version}
+  &lt;/body&gt;
+&lt;/html&gt;
+    </div>
+
+    <script src="localhost:8080/plugins/servlet/upm#manage/com.veniture.internDemo"></script>
+
+    $key
+</body>
+</html>
